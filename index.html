@@ -5,16 +5,16 @@
 <base href="https://whaleguard.github.io/maxday-life/">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1">
 <title>용마미식거리 · 먹거리·놀이·쉼 3D 마을</title>
-<meta name="description" content="용마미식거리 먹거리·놀이·쉼 3D 마을 — 용마사 · 용마교회 · 용마성당 · 용마 놀이터 · 용마 카페 · 용마 식당 · 용마미식거리 · 용마 게임장">
+<meta name="description" content="용마미식거리 먹거리·놀이·쉼 3D 마을 — 용마미식거리 · 용마 놀이터 · 용마 카페 · 용마 식당 · 자동차 극장">
 <meta name="theme-color" content="#15272B">
 <link rel="icon" href="/yongma-land/favicon.png">
 <meta property="og:title" content="용마미식거리 · 먹거리·놀이·쉼 3D 마을">
-<meta property="og:description" content="용마사 · 용마교회 · 용마성당 · 용마 놀이터 · 용마 카페 · 용마 식당 · 용마미식거리 · 용마 게임장 — 캐릭터로 입장해 함께 즐기는 3D 마을">
+<meta property="og:description" content="용마미식거리 · 용마 놀이터 · 용마 카페 · 용마 식당 · 자동차 극장 — 캐릭터로 입장해 함께 즐기는 3D 마을">
 <meta property="og:image" content="https://whaleguard.github.io/yongma-land/logo.png">
 <meta property="og:url" content="https://whaleguard.github.io/yongma-land/">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=7">
+<link rel="stylesheet" href="css/style.css?v=8">
 <script type="importmap">{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js", "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/" } }</script>
 </head>
 <body class="mode-garden">
@@ -47,7 +47,7 @@
 <!-- ===== 내부 공간 ===== -->
 <section id="room-ui" aria-label="공간 내부" hidden>
   <div class="topbar">
-    <div class="tb-left"><strong id="room-name">용마사</strong><span id="room-no" class="muted">1번 방</span></div>
+    <div class="tb-left"><img id="room-logo" alt="" hidden><strong id="room-name">용마미식거리</strong><span id="room-no" class="muted">1번 방</span></div>
     <div class="tb-right">
       <span class="people" id="people" title="실제 접속 인원 (체험용 방문객 제외)">👤 <b id="people-n">1</b>명</span>
       <span class="pts" id="pts" title="공덕 포인트">🪷 <b id="pts-n">0</b></span>
@@ -107,7 +107,7 @@
   <div class="sheet scroll">
     <h2>이용 안내</h2>
     <ul class="help">
-      <li>입구에서 <b id="help-spaces">용마사 · 용마교회 · 용마성당 · 용마 놀이터 · 용마 카페 · 용마 식당 · 용마미식거리 · 용마 게임장</b> 중 한 곳을 고르세요.</li>
+      <li>입구에서 <b id="help-spaces">용마미식거리 · 용마 놀이터 · 용마 카페 · 용마 식당 · 자동차 극장</b> 중 한 곳을 고르세요.</li>
       <li>바닥이나 빈자리를 누르면 캐릭터가 걸어가 앉아요. PC에서는 방향키로도 움직일 수 있어요.</li>
       <li>앉은 뒤 아래 버튼으로 합장·절하기(절), 기도하기(교회·성당), 차·커피 마시기(다도실·카페)를 할 수 있어요.</li>
       <li>성당 봉헌초 구역에서 빈 초를 누르면 촛불이 켜지고 10분 동안 모두에게 보여요(무료 가상 체험).</li>
@@ -239,6 +239,7 @@
     <img class="bl-map" src="assets/tex/yongma_booth-layout.webp" alt="부스 배치도" loading="lazy">
     <h3>먹거리부스 16곳</h3><div class="bl-grid" id="bl-food"></div>
     <h3>플리마켓 4곳</h3><div class="bl-grid" id="bl-market"></div>
+    <h3>어서와존 · K-미식벨트 강릉 향토음식</h3><div class="bl-grid" id="bl-kbelt"></div>
     <p class="tiny muted">누르면 그 부스로 걸어가요. 운영자 개인정보는 싣지 않습니다.</p>
   </div>
 </div>
@@ -253,7 +254,7 @@
 <div id="hint" hidden><div class="hint-card"><b>이렇게 이용해요</b><p id="hint-text"></p><button class="btn primary" id="hint-ok">알겠어요</button></div></div>
 <div id="fatal" class="overlay" hidden><div class="load-card"><p id="fatal-text"></p><div class="load-actions"><button class="btn primary" onclick="location.reload()">다시 시도</button></div></div></div>
 
-<script>window.MDL_BRAND = {"ko": "용마미식거리", "en": "YONGMA FOOD STREET", "short": "용마", "ns": "yongmaland/v1", "title": "먹거리·놀이·쉼 3D 마을", "extra": ["foodstreet", "arcade"], "videos": {"drivein": "23LPcp_5Zmg", "stage": "hn7LUXKaQ3o"}, "logo": "/yongma-land/logo.png"};</script>
-<script type="module" src="js/main.js?v=7"></script>
+<script>window.MDL_BRAND = {"ko": "용마미식거리", "en": "YONGMA FOOD STREET", "short": "용마", "ns": "yongmaland/v1", "title": "먹거리·놀이·쉼 3D 마을", "extra": ["foodstreet"], "only": ["foodstreet", "playground", "cafe", "restaurant"], "cinema": true, "videos": {"drivein": "23LPcp_5Zmg", "stage": "hn7LUXKaQ3o"}, "logo": "/yongma-land/logo.png"};</script>
+<script type="module" src="js/main.js?v=8"></script>
 </body>
 </html>
